@@ -1,8 +1,8 @@
 {
-  "name": "basetemplate",
-  "description": "Starter template for 11ty",
-  "homepage": "",
-  "version": "0.1.4",
+  "name": "JED",
+  "description": "Personal website",
+  "homepage": "https://github.com/pjedlund/JED",
+  "version": "0.1.5",
   "license": "Unlicense",
   "author": {
     "name": "Johan Edlund",
@@ -24,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pjedlund/11tybasetemplate"
+    "url": "https://github.com/pjedlund/JED"
   },
   "keywords": [
     "11ty",
     "starter"
   ],
   "bugs": {
-    "url": "https://github.com/pjedlund/11tybasetemplate/bugsbunny"
+    "url": "https://github.com/pjedlund/JED/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
