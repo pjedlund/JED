@@ -1,7 +1,7 @@
 ---
 title: "Note number one"
 syndicate: false
-tags: link
+tags: animals
 link: "https://indieweb.org/note"
 last_updated: 2023-09-29
 ---

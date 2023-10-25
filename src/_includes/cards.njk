@@ -1,0 +1,32 @@
+{% for post in collections.allpostsandnotes %}
+
+	{# {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%} #}
+	{# {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%} #}
+	{%- set cardType -%}{{ post.data.layout | replace(".njk", "") }}{%- endset -%}
+	
+	<article class="card card__{{ cardType }}" style="background-color: #111; margin: 1em 0;">
+	<a href="{{ post.url }}">
+		<aside class="card__aside">
+			<figure class="card__figure">
+				<img src="https://fakeimg.pl/350x200/000/222?text=こんにちは&font=noto" alt="Dummy Image" class="card__image">
+			</figure>
+		</aside>
+		<header class="card__header">
+			<h2 class="card__title">{{ post.data.title }}</h2>
+		</header>
+		<div class="card__body">
+			<p class="card__copy">
+				{{ post.data.description }}
+			</p>
+		</div>
+		<footer class="card__footer">
+		{{ post.date | readableDate('dd LLL yyyy') }}
+			<div class="card__actions">
+			</div>
+		</footer>
+	</a>
+	</article>
+
+{% endfor %}
+
+{# <p class="featuredposts__footer"><a href="/posts" class="featuredposts__see-all">See All Posts {% icon "arrow-right" %}</a></p> #}

@@ -10,7 +10,7 @@ layout: base.njk
     
     <div class="post__meta">
       {# Draft date #}
-      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">First draft: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
+      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">Folder date: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
       {# Published date #}
       {% if published %}
         <span> &sdot; </span>
@@ -23,19 +23,20 @@ layout: base.njk
       {% endif %}
       
       {# Tags #}
-      
       {% if tags %}
-      <span class="post__tags p-category">{{ tags | join(', ') }}</span>
+        {% for tag in tags %}
+        <span aria-label="in category"> &sdot; </span><span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+        {% endfor %}
       {% endif %}
      
-    </div>
+    </div> 
   
   </header>
    
     <div class="post__content e-content markdown" itemprop="articleBody">
     
       {% if siteConfig.showTableOfContents %}
-      <aside>
+      <aside> 
         {# Table Of Contents #}
         {% set tocMarkup = content | toc | safe %}
         {% set hasToc = tocMarkup.length > 0 %}

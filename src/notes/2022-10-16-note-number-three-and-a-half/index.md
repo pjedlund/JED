@@ -1,5 +1,7 @@
 ---
 title: 'Note number three'
+tags:
+ - testeino on note
 syndicate: true
 ---
 

@@ -1,16 +1,27 @@
 ---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+  - all
+  - allposts
+  - allnotes
+  - allpostsandnotes
+  - post
+  - posts
+  addAllPagesToCollections: true
 layout: base.njk
-permalink: /tags/
+permalink: /tags/{{ tag | slugify}}/index.html
+eleventyComputed:
+  title: "Tag: {{ tag }}"
+  metaDescription: "All contant from {{ meta.domain}} tagged with “{{ tag }}”"
 ---
-<h1>Tagged “{{ tag }}”</h1>
+<h1>{{ title }}</h1>
 
 <ol>
 {% set taglist = collections[ tag ] %}
-{% for post in taglist | reverse %}
-	<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+{% for t in taglist %}
+	<li><a href="{{ t.url }}">{{ t.data.title }}</a></li>
 {% endfor %}
 </ol>
-{# pagination:
-	data: collections.posts
-	size: 1
-permalink: /tags/{{ tag }}/ #}

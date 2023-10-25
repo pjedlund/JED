@@ -1,9 +1,9 @@
 {
-	"title": "11ty Basetemplate",
-	"description": "Basetemplate for 11ty",
-	"domain": "localhost",
-	"url": "https://11tybasetemplate.netlify.app",
-	"lang": "en",
-	"locale": "en-GB",
-	"repo": "https://github.com/pjedlund/11tybasetemplate"
+  "title": "Johan Edlund",
+  "description": "Personal website of Johan Edlund",
+  "domain": "johanedlund.se",
+  "url": "",
+  "lang": "en",
+  "locale": "en-US",
+  "repo": "https://github.com/pjedlund/JED"
 }

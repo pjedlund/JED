@@ -20,7 +20,7 @@ const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
   posts: 'src/posts/**/*.md',
   drafts: 'src/drafts/**/*.md',
-  notes: 'src/notes/*/*.md',
+  notes: 'src/notes/**/*.md',
   media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm|*.avif'
 }
 
@@ -28,7 +28,7 @@ module.exports = function (eleventyConfig) {
   //set deep data merge to...
   //eleventyConfig.setDataDeepMerge(false)
 
-  // Collection: allposts
+  // Collection: all
   eleventyConfig.addCollection('allposts', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.posts)
   })
@@ -37,12 +37,14 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
 
-  // Collection: Featured Post
-  eleventyConfig.addCollection('featured', function (collection) {
-    return collection
-      .getFilteredByGlob(CONTENT_GLOBS.posts)
-      .filter((item) => item.data.featured)
-    // .sort((a, b) => b.date - a.date);
+  // Collection: All Posts and Notes
+  eleventyConfig.addCollection('allpostsandnotes', function (collectionAPI) {
+    return (
+      collectionAPI
+        .getFilteredByGlob([CONTENT_GLOBS.posts, CONTENT_GLOBS.notes])
+        //.filter((item) => item.data.featured)
+        .sort((a, b) => b.date - a.date)
+    )
   })
 
   // Return all the tags used in a collection
