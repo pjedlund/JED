@@ -3,6 +3,7 @@ const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginEmbedEverything = require('eleventy-plugin-embed-everything')
 const pluginEleventyTOC = require('eleventy-plugin-nesting-toc')
+const pluginSvgSprite = require('eleventy-plugin-svg-sprite')
 const { minify } = require('terser')
 
 const markdownIt = require('markdown-it')
@@ -70,6 +71,10 @@ module.exports = function (eleventyConfig) {
     tags: ['h2', 'h3', 'h4'],
     wrapperClass: 'toc'
   })
+  eleventyConfig.addPlugin(pluginSvgSprite, {
+    path: './src/_assets/icons',
+    svgSpriteShortcode: 'iconsprite'
+  })
 
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
@@ -133,6 +138,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/site.webmanifest')
   eleventyConfig.addPassthroughCopy('src/_assets/fonts')
   eleventyConfig.addPassthroughCopy('src/_assets/images')
+  eleventyConfig.addPassthroughCopy('src/_assets/icons')
 
   // Pass-through for post-images
   eleventyConfig.addPassthroughCopy(

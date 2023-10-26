@@ -11,8 +11,9 @@
 	<link rel="stylesheet" href="{{ '/_assets/styles/main.css' | url }}">
 </head>
 <body>
-	<a href="#main" class="sr-skip-link">skip to main content</a>
-	<div class="layout" role="document">
+  {% iconsprite %}
+  <a href="#main" class="sr-skip-link">skip to main content</a>
+  <div class="layout" role="document">
   	{% include "header.njk" %}
   	<main class="main container" role="main" id="main" tabindex="-1">
       	{{ content | safe }}
