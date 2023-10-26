@@ -14,7 +14,7 @@ layout: base.njk
       {# Published date #}
       {% if published %}
         <span> &sdot; </span>
-        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ published | dateToISO }}">Published: {{ published | readableDate('yyyy-LL-dd') }}</time>
+        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ publish_date | dateToISO }}">Published: {{ publish_date | readableDate('yyyy-LL-dd') }}</time>
       {% endif %}
       {# Last updated date #}
       {% if last_updated %}
