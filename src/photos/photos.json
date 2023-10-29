@@ -1,0 +1,4 @@
+{
+  "layout": "photo.njk",
+  "permalink": "photos/{{ page.fileSlug }}/index.html"
+}

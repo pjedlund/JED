@@ -20,6 +20,7 @@ const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 
 const CONTENT_GLOBS = {
   posts: 'src/posts/**/*.md',
+  photos: 'src/photos/**/*.md',
   drafts: 'src/drafts/**/*.md',
   notes: 'src/notes/**/*.md',
   media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm|*.avif'
@@ -29,7 +30,7 @@ module.exports = function (eleventyConfig) {
   //set deep data merge to...
   //eleventyConfig.setDataDeepMerge(false)
 
-  // Collection: all
+  // Collection: posts
   eleventyConfig.addCollection('allposts', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.posts)
   })
@@ -37,12 +38,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('allnotes', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
+  // Collection: photos
+  eleventyConfig.addCollection('allphotos', function (collection) {
+    return collection.getFilteredByGlob(CONTENT_GLOBS.photos)
+  })
 
-  // Collection: All Posts and Notes
-  eleventyConfig.addCollection('allpostsandnotes', function (collectionAPI) {
+  // Collection: All Posts and Notes and Photos
+  eleventyConfig.addCollection('alltagsections', function (collectionAPI) {
     return (
       collectionAPI
-        .getFilteredByGlob([CONTENT_GLOBS.posts, CONTENT_GLOBS.notes])
+        .getFilteredByGlob([
+          CONTENT_GLOBS.posts,
+          CONTENT_GLOBS.notes,
+          CONTENT_GLOBS.photos
+        ])
         //.filter((item) => item.data.featured)
         .sort((a, b) => b.date - a.date)
     )

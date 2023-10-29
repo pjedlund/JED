@@ -1,0 +1,21 @@
+---
+layout: base
+permalink: /photos/
+title: Photos
+eleventyNavigation:
+  key: Photos
+---
+
+<div class="page page--blog">
+		<header class="page__header">
+				<h1 class="page__title">{{ title }}</h1>
+		</header>
+		<div class="page__content">
+			<ul>
+			{%- for photo in collections.allphotos -%}
+				<li><a href="{{ photo.url }}">{{ photo.data.title }}</a></li>
+			{%- endfor -%}
+			</ul>
+		</div>
+</div>
+
