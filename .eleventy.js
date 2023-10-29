@@ -71,10 +71,18 @@ module.exports = function (eleventyConfig) {
     tags: ['h2', 'h3', 'h4'],
     wrapperClass: 'toc'
   })
-  eleventyConfig.addPlugin(pluginSvgSprite, {
-    path: './src/_assets/icons',
-    svgSpriteShortcode: 'iconsprite'
-  })
+
+  eleventyConfig.addPlugin(
+    pluginSvgSprite,
+    {
+      path: './src/_assets/icons/general',
+      svgSpriteShortcode: 'iconsprite_general'
+    },
+    {
+      path: './src/_assets/svg_2', // relative path to SVG directory
+      svgSpriteShortcode: 'svgsprite2'
+    }
+  )
 
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
