@@ -17,7 +17,7 @@ layout: base.njk
 					
 					{% if tags %}
 						{% for tag in tags %}
-						<span aria-label="in category">&sdot;</span> <span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+						&sdot; <span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
 						{% endfor %}
 					{% endif %}
 

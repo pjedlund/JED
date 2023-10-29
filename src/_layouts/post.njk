@@ -10,22 +10,22 @@ layout: base.njk
     
     <div class="post__meta">
       {# Draft date #}
-      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">Folder date: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
+      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">Draft date: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
       {# Published date #}
       {% if published %}
         <span> &sdot; </span>
-        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ publish_date | dateToISO }}">Published: {{ publish_date | readableDate('yyyy-LL-dd') }}</time>
+        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ publishDate | dateToISO }}">Published: {{ publishDate | readableDate('yyyy-LL-dd') }}</time>
       {% endif %}
       {# Last updated date #}
       {% if last_updated %}
       <span> &sdot; </span>
-      <time class="post_updated dt-updated" datetime="{{ last_updated | dateToISO }}">Updated: {{ last_updated | readableDate('yyyy-LL-dd')}}</time>
+      <time class="post_updated dt-updated" datetime="{{ lastUpdated | dateToISO }}">Updated: {{ lastUpdated | readableDate('yyyy-LL-dd')}}</time>
       {% endif %}
       
       {# Tags #}
       {% if tags %}
         {% for tag in tags %}
-        <span aria-label="in category"> &sdot; </span><span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+         &sdot; <span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
         {% endfor %}
       {% endif %}
      

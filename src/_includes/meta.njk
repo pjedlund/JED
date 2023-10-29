@@ -8,9 +8,9 @@
 <meta property="og:description" content="{{ description or meta.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:locale" content="{{ locale or meta.locale }}">
-<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
-{%- if image -%}
-<meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
+<meta name="twitter:card" content="{% if featuredImage -%}summary_large_image{% else %}summary{% endif %}">
+{%- if featuredImage -%}
+<meta property="og:image" content="{{ featuredImage | url | absoluteUrl(meta.url) }}">
 {%- endif -%}
 {#Favicon #}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/_assets/images/favicon/apple-touch-icon.png' | url }}">

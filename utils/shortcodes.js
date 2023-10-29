@@ -32,7 +32,13 @@ module.exports = {
         return `${name}-${width}.${format}`
       }
     })
-    let imageAttributes = { alt, sizes, loading: 'lazy', decoding: 'async' }
+    let imageAttributes = {
+      alt,
+      sizes,
+      className,
+      loading: 'lazy',
+      decoding: 'async'
+    }
 
     let lowsrc = metadata.jpeg[0]
     let highsrc = metadata.jpeg[metadata.jpeg.length - 1]
@@ -40,7 +46,7 @@ module.exports = {
     //console.log(metadata);
 
     //return imageAttributes.sizes;
-    return `<figure class='extend'><picture>
+    return `<figure class='${className}'><picture>
       ${Object.values(metadata)
         .map((imageFormat) => {
           return `  <source type="${
