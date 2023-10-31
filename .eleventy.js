@@ -169,7 +169,7 @@ module.exports = function (eleventyConfig) {
   )
 
   //investigate what the heck deep data merge is .:/.
-  eleventyConfig.setDataDeepMerge(false)
+  //eleventyConfig.setDataDeepMerge(false)
   //eleventyConfig.setQuietMode(true);
 
   return {
