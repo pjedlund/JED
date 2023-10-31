@@ -27,9 +27,6 @@ const CONTENT_GLOBS = {
 }
 
 module.exports = function (eleventyConfig) {
-  //set deep data merge to...
-  //eleventyConfig.setDataDeepMerge(false)
-
   // Collection: posts
   eleventyConfig.addCollection('allposts', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.posts)
@@ -38,15 +35,23 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('allnotes', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
+  // Collection: notes
+  eleventyConfig.addCollection('allpostsandnotes', function (collection) {
+    return collection
+      .getFilteredByGlob([CONTENT_GLOBS.posts, CONTENT_GLOBS.notes])
+      .filter((item) => item.data.featured)
+      .sort((a, b) => b.date - a.date)
+  })
+
   // Collection: photos
   eleventyConfig.addCollection('allphotos', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.photos)
   })
 
   // Collection: All Posts and Notes and Photos
-  eleventyConfig.addCollection('alltagsections', function (collectionAPI) {
+  eleventyConfig.addCollection('alltagsections', function (collection) {
     return (
-      collectionAPI
+      collection
         .getFilteredByGlob([
           CONTENT_GLOBS.posts,
           CONTENT_GLOBS.notes,
@@ -162,6 +167,10 @@ module.exports = function (eleventyConfig) {
     'src/posts/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}',
     'src/notes/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}'
   )
+
+  //investigate what the heck deep data merge is .:/.
+  eleventyConfig.setDataDeepMerge(false)
+  //eleventyConfig.setQuietMode(true);
 
   return {
     passthroughFileCopy: true,

@@ -10,11 +10,6 @@ layout: base.njk
 		<div class="post__meta">
 					<time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | dateToISO }}">Published: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
 					
-					{% if last_updated %}
-					<span> &sdot; </span>
-					<time class="post_updated dt-updated" datetime="{{ last_updated | dateToISO }}">Updated: {{ last_updated | readableDate('yyyy-LL-dd')}}</time>
-					{% endif %}
-					
 					{% if tags %}
 						{% for tag in tags %}
 						&sdot; <span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>

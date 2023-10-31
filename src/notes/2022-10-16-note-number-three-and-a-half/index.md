@@ -1,7 +1,7 @@
 ---
-title: 'Note number three'
+title: 'Note number three and a half'
 tags:
- - testeino on note
+  - testeino on note
 syndicate: true
 ---
 
