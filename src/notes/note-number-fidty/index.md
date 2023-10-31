@@ -1,6 +1,5 @@
 ---
 title: 'Note number fidty'
-date: git Created
 tags:
   - testeino on note
 syndicate: true

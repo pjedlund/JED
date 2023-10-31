@@ -1,6 +1,5 @@
 ---
 title: 'Note number dagens datum'
-date: git Created
 syndicate: true
 ---
 

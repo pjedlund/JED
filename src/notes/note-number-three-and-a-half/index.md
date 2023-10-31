@@ -1,6 +1,5 @@
 ---
 title: 'Note number three and a half'
-date: git Created
 tags:
   - testeino on note
 syndicate: true
