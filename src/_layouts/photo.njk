@@ -9,6 +9,19 @@ layout: base.njk
     <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
     
     <div class="post__meta">
+      {# Draft date #}
+      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">Draft date: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
+      {# Published date #}
+      {% if publishDate %}
+        <span> &sdot; </span>
+        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ publishDate | dateToISO }}">Published: {{ publishDate | readableDate('yyyy-LL-dd') }}</time>
+      {% endif %}
+      {# Last updated date #}
+      {% if lastUpdated %}
+      <span> &sdot; </span>
+      <time class="post_updated dt-updated" datetime="{{ lastUpdated | dateToISO }}">Updated: {{ lastUpdated | readableDate('yyyy-LL-dd')}}</time>
+      {% endif %}
+      
       {# Tags #}
       {% if tags %}
         {% for tag in tags %}
