@@ -63,9 +63,9 @@ module.exports = function (eleventyConfig) {
   })
 
   // Return all the tags used in a collection
-  eleventyConfig.addFilter('getAllTags', (collection) => {
+  eleventyConfig.addFilter('getAllTags', (collectionAPI) => {
     let tagSet = new Set()
-    for (let item of collection) {
+    for (let item of collectionAPI) {
       ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
     }
     return Array.from(tagSet)
