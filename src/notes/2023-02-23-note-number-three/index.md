@@ -1,6 +1,8 @@
 ---
-title: 'Note number three-and-a-half'
+title: 'Note number three'
 syndicate: true
+tags:
+  - testerino
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.

@@ -165,7 +165,8 @@ module.exports = function (eleventyConfig) {
   // Pass-through for post-images
   eleventyConfig.addPassthroughCopy(
     'src/posts/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}',
-    'src/notes/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}'
+    'src/notes/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}',
+    'src/photos/*/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,tif,tiff,arw,dng}'
   )
 
   //investigate what the heck deep data merge is .:/.

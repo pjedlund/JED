@@ -1,5 +1,4 @@
 {
   "layout": "note.njk",
-  "permalink": "notes/{{ page.fileSlug }}/index.html",
-  "date": "git Created"
+  "permalink": "notes/{{ page.fileSlug }}/index.html"
 }
