@@ -3,6 +3,7 @@ title: Photo 120-R002-F07
 description: 'Medium format photo'
 tags:
   - medium
+  - animals
 publishDate: 2023-10-24
 lastUpdated: 2023-11-24
 ---

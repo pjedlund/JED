@@ -63,9 +63,9 @@ module.exports = function (eleventyConfig) {
   })
 
   // Return all the tags used in a collection
-  eleventyConfig.addFilter('getAllTags', (collectionAPI) => {
+  eleventyConfig.addFilter('getAllTags', (collection) => {
     let tagSet = new Set()
-    for (let item of collectionAPI) {
+    for (let item of collection) {
       ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
     }
     return Array.from(tagSet)
@@ -168,6 +168,7 @@ module.exports = function (eleventyConfig) {
     'src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}',
     'src/photos/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
   )
+  // eleventyConfig.addPassthroughCopy("**/*.psd");
 
   //investigate what the heck deep data merge is .:/.
   //eleventyConfig.setDataDeepMerge(false)
