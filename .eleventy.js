@@ -161,20 +161,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/_assets/images')
   eleventyConfig.addPassthroughCopy('src/_assets/icons')
 
-  // Pass-through for post-images
-  eleventyConfig.addPassthroughCopy(
-    'src/posts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}',
-    'src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}',
-    'src/photos/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
-  )
-  // eleventyConfig.addPassthroughCopy("**/*.psd");
+  // Pass-through images
+  eleventyConfig.addPassthroughCopy('src/drafts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}')
+  eleventyConfig.addPassthroughCopy('src/posts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}')
+  eleventyConfig.addPassthroughCopy('src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}')
+  eleventyConfig.addPassthroughCopy('src/photos/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd,dng,arw,tif,tiff}')
 
   //investigate what the heck deep data merge is .:/.
   //eleventyConfig.setDataDeepMerge(false)
   //eleventyConfig.setQuietMode(true);
 
   return {
-    passthroughFileCopy: true,
+    //??????
+    //passthroughFileCopy: true,
 
     dir: {
       input: 'src',
