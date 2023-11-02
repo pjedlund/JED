@@ -20,9 +20,8 @@ const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 
 const CONTENT_GLOBS = {
   posts: 'src/posts/**/*.md',
-  photos: 'src/photos/**/*.md',
-  drafts: 'src/drafts/**/*.md',
   notes: 'src/notes/**/*.md',
+  photos: 'src/photos/**/*.md',
   media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm|*.avif'
 }
 
