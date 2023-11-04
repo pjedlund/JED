@@ -115,7 +115,7 @@ makefile        text
 Procfile    text
 .slugignore text
 ## GRAPHICS
-*.ai   binary
+*.ai filter=lfs diff=lfs merge=lfs -text
 *.bmp  binary
 *.eps  binary
 *.gif  binary
@@ -129,11 +129,11 @@ Procfile    text
 *.pdf  binary
 *.png  binary
 *.psb  binary
-*.psd  binary
+*.psd filter=lfs diff=lfs merge=lfs -text
 *.svg  text
 *.svgz binary
 *.tif filter=lfs diff=lfs merge=lfs -text
-*.tiff binary
+*.tiff filter=lfs diff=lfs merge=lfs -text
 *.wbmp binary
 *.webp binary
 ## AUDIO
@@ -178,3 +178,5 @@ Procfile    text
 ## EXECUTABLES
 *.exe binary
 *.pyc binary
+*.arw filter=lfs diff=lfs merge=lfs -text
+*.dng filter=lfs diff=lfs merge=lfs -text
