@@ -1,9 +1,9 @@
-{% for post in collections.allpostsandnotes %}
+{% for post in collections.frontpage %}
 
 	{# {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%} #}
 	{# {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%} #}
 	{%- set cardType -%}{{ post.data.layout | replace(".njk", "") }}{%- endset -%}
-	
+
 	<article class="card card__{{ cardType }}" style="background-color: #111; margin: 1em 0;">
 	<a href="{{ post.url }}">
 		<aside class="card__aside">
@@ -28,5 +28,3 @@
 	</article>
 
 {% endfor %}
-
-{# <p class="featuredposts__footer"><a href="/posts" class="featuredposts__see-all">See All Posts {% icon "arrow-right" %}</a></p> #}

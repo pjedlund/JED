@@ -8,10 +8,9 @@ permalink: /
 	<header class="page__header">
 			<h1 class="page__title">Hello World!</h1>
 	</header><!-- end page__header -->
-	
-	{% if collections.allpostsandnotes.length %}
+
+	{% if collections.all.length %}
 	<div class="u-mb4">
 		{% include "cards.njk" %}
 	</div>
 	{% endif %}
-	

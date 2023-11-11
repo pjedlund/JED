@@ -8,6 +8,10 @@ tags:
   - Regementsgatan
   - Malmö
 publishDate: 2023-11-04
+sticky: false
+featured: true
+cardImage: seal.jpg
+cardColor: '#f9f9f9'
 ---
 
 <p class="lead">This photo was taken at the crossing of Regementsgatan and Fridhemsvägen in Malmö.</p>

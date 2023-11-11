@@ -34,17 +34,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('allnotes', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
-  // Collection: allpostsandnotes
-  eleventyConfig.addCollection('allpostsandnotes', function (collection) {
-    return collection
-      .getFilteredByGlob([CONTENT_GLOBS.posts, CONTENT_GLOBS.notes])
-      .filter((item) => item.data.featured)
-      .sort((a, b) => b.date - a.date)
-  })
-
   // Collection: allphotos
   eleventyConfig.addCollection('allphotos', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.photos)
+  })
+
+  // Collection: all content be listed on the frontpage
+  eleventyConfig.addCollection('frontpage', function (collection) {
+    return collection
+      .getFilteredByGlob([
+        CONTENT_GLOBS.posts,
+        CONTENT_GLOBS.notes,
+        CONTENT_GLOBS.photos
+      ])
+      .filter((item) => item.data.featured)
+      .sort((a, b) => b.date - a.date)
   })
 
   // Collection: alltagsections
@@ -124,14 +128,14 @@ module.exports = function (eleventyConfig) {
     .use(markdownItFootnote)
 
     .use(markdownItAnchor, {
-      //permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
-      permalink: true,
-      permalinkSymbol: '#',
-      permalinkClass: 'heading-anchor',
-      permalinkBefore: true,
-      permalinkAttrs: () => ({ 'aria-hidden': true }),
-      level: 2,
-      slugify: anchorSlugify
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after',
+        class: 'heading-anchor',
+        symbol: '#',
+        ariaHidden: false
+      }),
+      level: [1, 2, 3, 4],
+      slugify: eleventyConfig.getFilter('slugify')
     })
     .use(markdownItToCDoneRight)
   //TODO:!! add [num] infront of footnotes
