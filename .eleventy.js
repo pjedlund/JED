@@ -26,15 +26,15 @@ const CONTENT_GLOBS = {
 }
 
 module.exports = function (eleventyConfig) {
-  // Collection: posts
+  // Collection: allposts
   eleventyConfig.addCollection('allposts', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.posts)
   })
-  // Collection: notes
+  // Collection: allnotes
   eleventyConfig.addCollection('allnotes', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
-  // Collection: notes
+  // Collection: allpostsandnotes
   eleventyConfig.addCollection('allpostsandnotes', function (collection) {
     return collection
       .getFilteredByGlob([CONTENT_GLOBS.posts, CONTENT_GLOBS.notes])
@@ -42,12 +42,12 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date)
   })
 
-  // Collection: photos
+  // Collection: allphotos
   eleventyConfig.addCollection('allphotos', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.photos)
   })
 
-  // Collection: All Posts and Notes and Photos
+  // Collection: alltagsections
   eleventyConfig.addCollection('alltagsections', function (collection) {
     return (
       collection
@@ -59,15 +59,6 @@ module.exports = function (eleventyConfig) {
         //.filter((item) => item.data.featured)
         .sort((a, b) => b.date - a.date)
     )
-  })
-
-  // Return all the tags used in a collection
-  eleventyConfig.addFilter('getAllTags', (collection) => {
-    let tagSet = new Set()
-    for (let item of collection) {
-      ;(item.data.tags || []).forEach((tag) => tagSet.add(tag))
-    }
-    return Array.from(tagSet)
   })
 
   // Plugins
@@ -162,10 +153,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/_assets/icons')
 
   // Pass-through images
-  eleventyConfig.addPassthroughCopy('src/drafts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}')
-  eleventyConfig.addPassthroughCopy('src/posts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}')
-  eleventyConfig.addPassthroughCopy('src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}')
-  eleventyConfig.addPassthroughCopy('src/photos/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd,dng,arw,tif,tiff}')
+  eleventyConfig.addPassthroughCopy(
+    'src/drafts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
+  )
+  eleventyConfig.addPassthroughCopy(
+    'src/posts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
+  )
+  eleventyConfig.addPassthroughCopy(
+    'src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}'
+  )
+  eleventyConfig.addPassthroughCopy(
+    'src/photos/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd,dng,arw,tif,tiff}'
+  )
 
   //investigate what the heck deep data merge is .:/.
   //eleventyConfig.setDataDeepMerge(false)

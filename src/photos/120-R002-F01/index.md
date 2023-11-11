@@ -4,6 +4,9 @@ filename: '120-R002-F01-S02-E01.jpg'
 description: '120-R002-F01-S02-E01 Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 tags:
   - animals
+  - Fridhem
+  - Regementsgatan
+  - Malmö
 publishDate: 2023-11-04
 ---
 
