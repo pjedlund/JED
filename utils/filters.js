@@ -49,5 +49,13 @@ module.exports = {
   // Filter away page tags etc.
   filterTagList: function filterTagList(tags) {
     return (tags || []).filter((tag) => ['link', 'sdf'].indexOf(tag) === -1)
+  },
+
+  // Add file extension
+  setExt: function (path, ext) {
+    if (!ext) {
+      return path
+    }
+    return path.substr(0, path.lastIndexOf('.')) + `.${ext}`
   }
 }
