@@ -19,16 +19,16 @@ const transforms = require('./utils/transforms.js')
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 
 const CONTENT_GLOBS = {
-  posts: 'src/posts/**/*.md',
+  articles: 'src/articles/**/*.md',
   notes: 'src/notes/**/*.md',
   photos: 'src/photos/**/*.md',
   media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm|*.avif'
 }
 
 module.exports = function (eleventyConfig) {
-  // Collection: allposts
-  eleventyConfig.addCollection('allposts', function (collection) {
-    return collection.getFilteredByGlob(CONTENT_GLOBS.posts)
+  // Collection: allarticles
+  eleventyConfig.addCollection('allarticles', function (collection) {
+    return collection.getFilteredByGlob(CONTENT_GLOBS.articles)
   })
   // Collection: allnotes
   eleventyConfig.addCollection('allnotes', function (collection) {
@@ -43,7 +43,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('frontpage', function (collection) {
     return collection
       .getFilteredByGlob([
-        CONTENT_GLOBS.posts,
+        CONTENT_GLOBS.articles,
         CONTENT_GLOBS.notes,
         CONTENT_GLOBS.photos
       ])
@@ -56,7 +56,7 @@ module.exports = function (eleventyConfig) {
     return (
       collection
         .getFilteredByGlob([
-          CONTENT_GLOBS.posts,
+          CONTENT_GLOBS.articles,
           CONTENT_GLOBS.notes,
           CONTENT_GLOBS.photos
         ])
@@ -161,7 +161,7 @@ module.exports = function (eleventyConfig) {
     'src/drafts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
   )
   eleventyConfig.addPassthroughCopy(
-    'src/posts/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
+    'src/articles/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif,psd}'
   )
   eleventyConfig.addPassthroughCopy(
     'src/notes/**/*.{jpg,jpeg,png,gif,mp4,webp,webm,avif}'

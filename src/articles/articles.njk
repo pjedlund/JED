@@ -1,9 +1,9 @@
 ---
 layout: base
-permalink: /posts/index.html
-title: Posts
+permalink: /articles/index.html
+title: Articles
 eleventyNavigation:
-  key: Posts
+  key: Articles
 ---
 
 <div class="page page--blog">
@@ -12,13 +12,13 @@ eleventyNavigation:
 		</header>
 		<div class="page__content">
 			<ul>
-			{%- for post in collections.allposts -%}
-				<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+			{%- for article in collections.allarticles -%}
+				<li><a href="{{ article.url }}">{{ article.data.title }}</a></li>
 			{%- endfor -%}
 			</ul>
 		</div>
 </div>
 
 {# pagination:
-data: collections.allposts
+data: collections.allarticles
 size: 1 #}

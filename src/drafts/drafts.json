@@ -1,5 +1,5 @@
 {
-  "layout": "post.njk",
+  "layout": "article.njk",
   "permalink": "drafts/{{ page.fileSlug }}/index.html",
   "excludeFromSitemap": true,
   "draft": true
