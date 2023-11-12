@@ -1,6 +1,7 @@
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
 {# General #}
 <meta name="description" content="{{ description or meta.description }}">
+<meta name="keywords" content="{{ tags }}">
 <link rel="canonical" href="{{ absolutePageUrl }}">
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}">
