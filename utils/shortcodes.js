@@ -3,14 +3,14 @@ const path = require('path')
 
 module.exports = {
   //
-  icon: function (name) {
+  icon: function(name) {
     return `<svg class="icon icon--${name}" role="img" aria-hidden="true" width="24" height="24">
       <use xlink:href="#svg-${name}"></use>
       </svg>`
   },
 
   // usage: {% image "bear.jpeg", "photo of my bear" %}
-  image: async function (src, alt, classname, sizes = '100vw') {
+  image: async function(src, alt, classname, sizes = '100vw') {
     if (alt === undefined) {
       throw new Error(`Missing \`alt\` for: ${src}`)
     }
@@ -26,20 +26,13 @@ module.exports = {
       outputDir: path.dirname(this.page.outputPath),
       // Prepend the correct path to the image `src` value
       urlPath: this.page.url,
-      filenameFormat: function (id, src, width, format, options) {
+      filenameFormat: function(id, src, width, format, options) {
         const extension = path.extname(src)
         const name = path.basename(src, extension)
         return `${name}-${width}.${format}`
       }
     })
-    let imageAttributes = {
-      alt,
-      sizes,
-      className,
-      loading: 'lazy',
-      decoding: 'async'
-    }
-
+    let imageAttributes = { alt, sizes, className, loading: 'lazy', decoding: 'async' }
     let lowsrc = metadata.jpeg[0]
     let highsrc = metadata.jpeg[metadata.jpeg.length - 1]
 
@@ -56,13 +49,7 @@ module.exports = {
             .join(', ')}" sizes="${sizes}">`
         })
         .join('\n')}
-          <img
-              src="${lowsrc.url}"
-              width="${highsrc.width}"
-              height="${highsrc.height}"
-              alt="${alt}"
-              loading="lazy"
-              decoding="async">
+          <img src="${lowsrc.url}" width="${highsrc.width}" height="${highsrc.height}" alt="${alt}" loading="lazy" decoding="async">
       </picture>
       <figcaption>${alt}</figcaption>
       </figure>`
