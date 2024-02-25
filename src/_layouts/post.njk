@@ -1,0 +1,74 @@
+---
+layout: base.njk
+---
+
+<article id="{{ title | slug }}" class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" aria-labelledby="{{ title | slug }}-title">
+
+  <header class="article__header">
+  
+    <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
+    
+    <div class="post__meta">
+      {# Draft date #}
+      <time class="post__date dt-draft" datetime="{{ page.date | dateToISO }}">Draft date: {{ page.date | readableDate('yyyy-LL-dd') }}</time>
+      {# Published date #}
+      {% if publishDate %}
+        <span> &sdot; </span>
+        <time class="post__date dt-published" itemprop="datePublished" datetime="{{ publishDate | dateToISO }}">Published: {{ publishDate | readableDate('yyyy-LL-dd') }}</time>
+      {% endif %}
+      {# Last updated date #}
+      {% if lastUpdated %}
+      <span> &sdot; </span>
+      <time class="post_updated dt-updated" datetime="{{ lastUpdated | dateToISO }}">Updated: {{ lastUpdated | readableDate('yyyy-LL-dd')}}</time>
+      {% endif %}
+      
+      {# Tags #}
+      {% if tags %}
+        {% for tag in tags %}
+         &sdot; <span class="post__tags p-category"><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+        {% endfor %}
+      {% endif %}
+     
+    </div> 
+  
+  </header>
+   
+    <div class="post__content e-content markdown" itemprop="articleBody">
+    
+      {% if siteConfig.showTableOfContents %}
+      <aside> 
+        {# Table Of Contents #}
+        {% set tocMarkup = content | toc | safe %}
+        {% set hasToc = tocMarkup.length > 0 %}
+        {% if hasToc %}
+          {% include "toc.njk" %}
+        {% endif %}
+      </aside>
+      {% endif %}
+    
+      {{ content | safe }}
+      
+    </div>
+    
+    <div class="post__footer">
+      <div hidden>
+        <a class="u-url" href="{{ page.url | url | absoluteUrl(site.url) }}">{{ title }}</a>
+        <p class="h-card p-author">
+            <a class="p-name u-url" rel="author" href="{{ author.url }}">{{ author.name }}</a>
+            {# <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(author.url) }}" /> #}
+        </p>
+      </div>
+      {% if draft %}
+          <p class="post__footer__info">
+              This post is still a draft.<br>
+              <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Suggest a change</a>
+          </p>
+      {% else %}
+          <p class="post__footer__info">
+              Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }} <br>
+              <a href="{{ meta.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Edit this Post</a>
+          </p>
+      {% endif %}
+    </div>
+
+</article>
