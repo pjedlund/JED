@@ -6,18 +6,16 @@
 
 	<article class="card card__{{ cardType }}" style="background-color: #111; margin: 1em 0;">
 	<a href="{{ post.url }}">
-		<aside class="card__aside">
-			{% if post.data.cardImage %}
-				{%- set cardImageURL -%}{{ [post.url, "thumb"] | join }}{%- endset -%}
-				<picture>
-						<source srcset="{{ cardImageURL }}.avif" type="image/avif">
-						<source srcset="{{ cardImageURL }}.webp" type="image/webp">
-						<source srcset=""{{ cardImageURL }}.jpg" type="image/jpeg">
-						<img src="{{ cardImageURL }}.jpg" alt="" width="500" height="500" class="card__image" />
-				</picture>
-		 {% endif %}
 
+		<aside class="card__aside">
+			{# {% if post.data.cardImage %}
+				{%- set cardImageURL -%}{{ [post.url, "thumb"] | join }}{%- endset -%} #}
+				<picture>
+						<source srcset="hello.avif" type="image/avif">
+				</picture>
+		 {# {% endif %} #}
 		</aside>
+
 		<header class="card__header">
 			<h2 class="card__title">{{ post.data.title }}</h2>
 		</header>
