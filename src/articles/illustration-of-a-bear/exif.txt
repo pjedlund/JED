@@ -1,0 +1,74 @@
+ExifTool Version Number         : 12.76
+File Name                       : bear.jpeg
+Directory                       : .
+File Size                       : 397 kB
+File Modification Date/Time     : 2024:02:25 20:30:27+01:00
+File Access Date/Time           : 2024:03:02 13:37:38+01:00
+File Inode Change Date/Time     : 2024:03:02 13:37:36+01:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Orientation                     : Horizontal (normal)
+X Resolution                    : 300
+Y Resolution                    : 300
+Resolution Unit                 : inches
+Y Cb Cr Positioning             : Centered
+Exif Version                    : 0210
+Flashpix Version                : 0100
+Color Space                     : Uncalibrated
+Exif Image Width                : 1600
+Exif Image Height               : 1038
+XMP Toolkit                     : Image::ExifTool 12.41
+Creator                         : rawpixel.com
+Description                     : Brown Bear (Ursus Arctos) illustrated by Charles Dessalines D' Orbigny (1806-1876). Digitally enhanced from our own 1892 edition of Dictionnaire Universel D'histoire Naturelle.
+Subject                         : 1800s, 1800s public domain, 19th century, ancient, animal, animal graphics, animal illustrations, animals public domain, antique, art, art public domain, artwork, brown bear, cc0, charles, charles dessalines d' orbigny, copyright free public domain, creative common 0, creative commons, creative commons 0, d' orbigny, dessalines, dictionnaire universel d'histoire naturelle, drawing, hand drawing, high resolution public domain, illustration, illustration public domain, old, orbigny, ornaments, public domain, public domain 1800s, public domain animals, public domain art, public domain images, public domain prints, public domain rawpixel collection, rawpixel collection public domain, royalty free public domain, style, ursus arctos, vintage, vintage illustration public domain, wildlife, zoo
+Title                           : Brown Bear (Ursus Arctos) illustrated by Charles Dessalines D' Orbigny (1806-1876). Digitally enhanced from our own 1892 edition of Dictionnaire Universel D'histoire Naturelle.
+Author                          : rawpixel.com
+Licensor URL                    : https://www.rawpixel.com/image/324328
+Creator Tool                    : rawpixel.com
+Rating                          : 7
+Web Statement                   : https://creativecommons.org/publicdomain/zero/1.0/
+Current IPTC Digest             : 91f8c89bc97f570c8d64c676da47af7f
+Coded Character Set             : UTF8
+Envelope Record Version         : 4
+Keywords                        : 1800s, 1800s public domain, 19th century, ancient, animal, animal graphics, animal illustrations, animals public domain, antique, art, art public domain, artwork, brown bear, cc0, charles, charles dessalines d' orbigny, copyright free public domain, creative common 0, creative commons, creative commons 0, d' orbigny, dessalines, dictionnaire universel d'histoire naturelle, drawing, hand drawing, high resolution public domain, illustration, illustration public domain, old, orbigny, ornaments, public domain, public domain 1800s, public domain animals, public domain art, public domain images, public domain prints, public domain rawpixel collection, rawpixel collection public domain, royalty free public domain, style, ursus arctos, vintage, vintage illustration public domain, wildlife, zoo
+Credit                          : rawpixel.com
+Caption-Abstract                : Brown Bear (Ursus Arctos) illustrated by Charles Dessalines D' Orbigny (1806-1876). Digitally enhanced from our own 1892 edition of Dictionnaire Universel D'histoire Naturelle.
+Application Record Version      : 4
+Profile CMM Type                : Adobe Systems Inc.
+Profile Version                 : 2.1.0
+Profile Class                   : Display Device Profile
+Color Space Data                : RGB
+Profile Connection Space        : XYZ
+Profile Date Time               : 2000:08:11 19:51:59
+Profile File Signature          : acsp
+Primary Platform                : Apple Computer Inc.
+CMM Flags                       : Not Embedded, Independent
+Device Manufacturer             : none
+Device Model                    :
+Device Attributes               : Reflective, Glossy, Positive, Color
+Rendering Intent                : Perceptual
+Connection Space Illuminant     : 0.9642 1 0.82491
+Profile Creator                 : Adobe Systems Inc.
+Profile ID                      : 0
+Profile Copyright               : Copyright 2000 Adobe Systems Incorporated
+Profile Description             : Adobe RGB (1998)
+Media White Point               : 0.95045 1 1.08905
+Media Black Point               : 0 0 0
+Red Tone Reproduction Curve     : (Binary data 14 bytes, use -b option to extract)
+Green Tone Reproduction Curve   : (Binary data 14 bytes, use -b option to extract)
+Blue Tone Reproduction Curve    : (Binary data 14 bytes, use -b option to extract)
+Red Matrix Column               : 0.60974 0.31111 0.01947
+Green Matrix Column             : 0.20528 0.62567 0.06087
+Blue Matrix Column              : 0.14919 0.06322 0.74457
+Image Width                     : 1600
+Image Height                    : 1038
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 1600x1038
+Megapixels                      : 1.7

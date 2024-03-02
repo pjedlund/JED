@@ -81,7 +81,7 @@ module.exports = function(eleventyConfig) {
       path: './src/_assets/icons/general',
       svgSpriteShortcode: 'iconsprite_general'
     }, {
-      path: './src/_assets/svg_2', // relative path to SVG directory
+      path: './src/_assets/svg_2',
       svgSpriteShortcode: 'svgsprite2'
     }
   )
