@@ -10,7 +10,7 @@
   "name": "Johan Edlund",
   "email": "hello@johanedlund.se",
   "phone": "+46706022495",
-  "avatar": "/assets/images/avatar.webp",
+  "avatar": "/_assets/images/avatar.webp",
   "social": {
     "twitter": {
       "name": "pjedlund",
