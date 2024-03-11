@@ -44,7 +44,7 @@ layout: base.njk
         <a class="u-url" href="{{ page.url | url | absoluteUrl(site.url) }}">{{ title }}</a>
         <p class="h-card p-author">
             <a class="p-name u-url" rel="author" href="{{ meta.url }}">{{ meta.name }}</a>
-            {# <img class="u-photo" src="{{ meta.avatar | url | absoluteUrl(meta.url) }}" /> #}
+            <img class="u-photo" src="{{ meta.avatar | url | absoluteUrl(meta.url) }}" />
         </p>
       </div>
       {% if draft %}
