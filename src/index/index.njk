@@ -1,16 +1,47 @@
 ---
-layout: base
 permalink: /
 ---
 
-<div class="page page--start">
+<!DOCTYPE html>
+<html class="no-js" lang="{{ lang or meta.lang }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{%- if title -%}{{ title }} | {{ meta.title }}{%- else -%}{{ meta.title }}{%- endif -%}</title>
+	{# <meta name="robots" content="noindex" /> #}
+	{# General #}
+	<meta name="description" content="{{ description or meta.description }}">
+	<meta name="keywords" content="{{ tags }}">
+	<link rel="canonical" href="{{ absolutePageUrl }}">
+	{# Open Graph #}
+	<meta property="og:site_name" content="{{ meta.title }}">
+	<meta property="og:title" content="{{ title or meta.title }}">
+	<meta property="og:description" content="{{ description or meta.description }}">
+	<meta property="og:url" content="{{ absolutePageUrl }}">
+	<meta property="og:locale" content="{{ locale or meta.locale }}">
+	<meta name="twitter:card" content="{% if featuredImage -%}summary_large_image{% else %}summary{% endif %}">
+	{%- if featuredImage -%}
+	<meta property="og:image" content="{{ featuredImage | url | absoluteUrl(meta.url) }}">
+	{%- endif -%}
+	{#Favicon #}
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/_assets/images/favicon/apple-touch-icon.png' | url }}">
+	<link rel="icon" type="image/png" href="{{ '/_assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ '/_assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
+	<link rel="shortcut icon" href="{{ '/_assets/images/favicon/favicon.ico' | url }}">
+	<link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+	<meta name="theme-color" content="#1a1a1a">
+	{# RSS Feed #}
+	<link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feeds/feed.xml" title="{{ meta.title }}">
+	<link rel="stylesheet" href="{{ '/_assets/styles/main.css' | url }}">
+</head>
+<body>
+	{% iconsprite_general %}
+	<a href="#main" class="sr-skip-link">skip to main content</a>
+		<main>
+			<h1 class="page__title"><span lang="sv">Hej!</span> I'm Johan Edlund. I currently reside at <span lang="sv">Västra Ryttmästaregatan<span> 30D in the town of Malmö. </h1>
+		</main>
 
-	<header class="page__header">
-			<h1 class="page__title">Hello World!</h1>
-	</header><!-- end page__header -->
-
-	{% if collections.all.length %}
-	<div class="u-mb4">
-		{% include "cards.njk" %}
-	</div>
-	{% endif %}
+	<script src="{{ '/_assets/scripts/main.js' | url }}"></script>
+	<script>if ('serviceWorker' in navigator){navigator.serviceWorker.register('/serviceworker.js')}</script>
+	</body>
+	</html>
