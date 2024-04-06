@@ -35,11 +35,25 @@ permalink: /
 	<link rel="stylesheet" href="{{ '/_assets/styles/main.css' | url }}">
 </head>
 <body>
-	{% iconsprite_general %}
+	{% iconsprite_social %}
 	<a href="#main" class="sr-skip-link">skip to main content</a>
 		<main>
-			<h1 class="page__title"><span lang="sv">Hej!</span> I'm Johan Edlund. I currently reside at <span lang="sv">Västra Ryttmästaregatan<span> 30D in the town of Malmö. </h1>
-		</main>
+
+
+
+<main class="h-card container" rel="author">
+<img width="500" height="500" class="u-photo" src="{{ '/_assets/images/avatar.webp' | url }}" alt="Headshot (selfie) of Johan Edlund in front of the castle Krageholm" />
+<h1 class="p-note"><span lang="sv">Hej!</span> I'm <a href="{{ meta.url }}"><span class="p-name"><span class="p-given-name">Johan</span> <span class="p-family-name">Edlund</span></span></a>
+and I live in the town of <span class="p-locality" lang="sv">Malmö</span> in the southernmost region of <span class="p-country-name">Sweden</span>, <a href="https://en.wikipedia.org/wiki/Scania" class="p-region">Scania</a>.
+</h1>
+<ul class="social_icons">
+<li><a class="u-email" rel="me" href="mailto:me@johanedlund.se" title="E-mail">{% icon "email" %}<span hidden>E-mail<span></a></li>
+<li><a rel="me" href="{{ meta.social.mastodon.url }}" title="Mastodon">{% icon "mastodon" %}<span hidden>Mastodon<span></a></li>
+<li><a rel="me" href="{{ meta.social.twitter.url }}" title="Twitter">{% icon "twitter" %}<span hidden>Twitter<span></a></li>
+<li><a rel="me" href="{{ meta.social.github.url }}" title="Github">{% icon "github" %}<span hidden>Github</span></a></li>
+</ul>
+
+</main>
 
 	<script src="{{ '/_assets/scripts/main.js' | url }}"></script>
 	<script>if ('serviceWorker' in navigator){navigator.serviceWorker.register('/serviceworker.js')}</script>

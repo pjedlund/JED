@@ -25,39 +25,43 @@ const CONTENT_GLOBS = {
   media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm|*.avif'
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Collection: allarticles
-  eleventyConfig.addCollection('allarticles', function(collection) {
+  eleventyConfig.addCollection('allarticles', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.articles)
   })
   // Collection: allnotes
-  eleventyConfig.addCollection('allnotes', function(collection) {
+  eleventyConfig.addCollection('allnotes', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.notes)
   })
   // Collection: allphotos
-  eleventyConfig.addCollection('allphotos', function(collection) {
+  eleventyConfig.addCollection('allphotos', function (collection) {
     return collection.getFilteredByGlob(CONTENT_GLOBS.photos)
   })
 
   // Collection: all content be listed on the frontpage
-  eleventyConfig.addCollection('frontpage', function(collection) {
+  eleventyConfig.addCollection('frontpage', function (collection) {
     return collection
-      .getFilteredByGlob([CONTENT_GLOBS.articles, CONTENT_GLOBS.notes, CONTENT_GLOBS.photos])
-      .filter((item) => item.data.featured)
-      .sort((a, b) => b.date - a.date)
-  })
-
-  // Collection: alltagsections
-  eleventyConfig.addCollection('alltagsections', function(collection) {
-    return (
-      collection
       .getFilteredByGlob([
         CONTENT_GLOBS.articles,
         CONTENT_GLOBS.notes,
         CONTENT_GLOBS.photos
       ])
-      //.filter((item) => item.data.featured)
+      .filter((item) => item.data.featured)
       .sort((a, b) => b.date - a.date)
+  })
+
+  // Collection: alltagsections
+  eleventyConfig.addCollection('alltagsections', function (collection) {
+    return (
+      collection
+        .getFilteredByGlob([
+          CONTENT_GLOBS.articles,
+          CONTENT_GLOBS.notes,
+          CONTENT_GLOBS.photos
+        ])
+        //.filter((item) => item.data.featured)
+        .sort((a, b) => b.date - a.date)
     )
   })
 
@@ -77,12 +81,14 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addPlugin(
-    pluginSvgSprite, {
-      path: './src/_assets/icons/general',
-      svgSpriteShortcode: 'iconsprite_general'
-    }, {
-      path: './src/_assets/svg_2',
-      svgSpriteShortcode: 'svgsprite2'
+    pluginSvgSprite,
+    {
+      path: './src/_assets/icons/social',
+      svgSpriteShortcode: 'iconsprite_social'
+    },
+    {
+      path: './src/_assets/icons/svg_2',
+      svgSpriteShortcode: 'iconsprite_svgsprite2'
     }
   )
 
@@ -111,11 +117,11 @@ module.exports = function(eleventyConfig) {
   const anchorSlugify = (s) =>
     encodeURIComponent(
       'h-' +
-      String(s)
-      .trim()
-      .toLowerCase()
-      .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
-      .replace(/\s+/g, '-')
+        String(s)
+          .trim()
+          .toLowerCase()
+          .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+          .replace(/\s+/g, '-')
     )
   let markdownLib = markdownIt(markdownItOptions)
     .use(markdownItAttrs)
