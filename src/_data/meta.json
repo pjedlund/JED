@@ -8,13 +8,17 @@
   "repo": "https://github.com/pjedlund/JED",
 
   "name": "Johan Edlund",
-  "email": "hello@johanedlund.se",
+  "email": "me@johanedlund.se",
   "phone": "+46706022495",
   "avatar": "/_assets/images/avatar.webp",
   "social": {
     "twitter": {
       "name": "pjedlund",
       "url": "https://twitter.com/pjedlund"
+    },
+    "mastodon": {
+      "name": "pjedlund",
+      "url": "https://mastodon.social/@pjedlund"
     },
     "github": {
       "name": "pjedlund",
