@@ -12,6 +12,7 @@ permalink: /
 	{# General #}
 	<meta name="description" content="{{ description or meta.description }}">
 	<meta name="keywords" content="{{ tags }}">
+	{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
 	<link rel="canonical" href="{{ absolutePageUrl }}">
 	{# Open Graph #}
 	<meta property="og:site_name" content="{{ meta.title }}">
@@ -37,11 +38,8 @@ permalink: /
 <body>
 	{% iconsprite_social %}
 	<a href="#main" class="sr-skip-link">skip to main content</a>
-		<main>
 
-
-
-<main class="h-card container" rel="author">
+<main class="main h-card container" rel="author">
 <img width="500" height="500" class="u-photo" src="{{ '/_assets/images/avatar.webp' | url }}" alt="Headshot (selfie) of Johan Edlund in front of the castle Krageholm" />
 <h1 class="p-note"><span lang="sv">Hej!</span> I'm <a href="{{ meta.url }}"><span class="p-name"><span class="p-given-name">Johan</span> <span class="p-family-name">Edlund</span></span></a>
 and I live in the town of <span class="p-locality" lang="sv">Malmö</span> in the southernmost region of <span class="p-country-name">Sweden</span>, <a href="https://en.wikipedia.org/wiki/Scania" class="p-region">Scania</a>.
