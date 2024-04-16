@@ -1,16 +1,28 @@
 {
   "name": "johanedlund.se",
   "description": "Personal website of Johan Edlund",
-  "homepage": "https://github.com/pjedlund/JED",
+  "homepage": "https://www.johanedlund.se",
   "version": "0.1.6",
   "license": "Unlicense",
   "author": {
     "name": "Johan Edlund",
-    "email": "hello@johanedlund.se",
+    "email": "me@johanedlund.se",
     "url": "https://www.johanedlund.se"
   },
   "engines": {
-    "node": ">=16.x.x"
+    "node": ">=18.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjedlund/JED"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "indieweb"
+  ],
+  "bugs": {
+    "url": "https://github.com/pjedlund/JED/issues"
   },
   "main": "main.js",
   "scripts": {
@@ -21,17 +33,6 @@
     "dev": "run-s clean eleventy:dev --print-label",
     "build": "run-s clean eleventy:prod --print-label",
     "start": "npm run dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pjedlund/JED"
-  },
-  "keywords": [
-    "11ty",
-    "starter"
-  ],
-  "bugs": {
-    "url": "https://github.com/pjedlund/JED/issues"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
