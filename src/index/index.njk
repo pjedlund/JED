@@ -14,6 +14,9 @@ permalink: /
 	<meta name="keywords" content="{{ tags }}">
 	{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
 	<link rel="canonical" href="{{ absolutePageUrl }}">
+	{# Webmentions#}
+	<link rel="pingback" href="https://webmention.io/www.johanedlund.se/xmlrpc" />
+	<link rel="webmention" href="https://webmention.io/www.johanedlund.se/webmention" />
 	{# Open Graph #}
 	<meta property="og:site_name" content="{{ meta.title }}">
 	<meta property="og:title" content="{{ title or meta.title }}">
