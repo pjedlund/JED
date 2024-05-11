@@ -10,7 +10,7 @@
     "url": "https://www.johanedlund.se"
   },
   "engines": {
-    "node": ">=18.x.x"
+    "node": ">=20.x.x"
   },
   "repository": {
     "type": "git",
