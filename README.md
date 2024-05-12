@@ -2,4 +2,4 @@
 
 Personal (indie)website using [eleventy](https://www.11ty.dev).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/601bb535-901a-4ed3-aaf8-5790749e22ef/deploy-status)](https://app.netlify.com/sites/johanedlund/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/16a0708e-b099-42ec-9e83-7944cf836e62/deploy-status)](https://app.netlify.com/sites/johanedlundse/deploys)
