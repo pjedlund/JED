@@ -4,6 +4,9 @@
   "homepage": "https://www.johanedlund.se",
   "version": "0.1.6",
   "license": "Unlicense",
+  "browserslist": [
+    "defaults"
+  ],
   "author": {
     "name": "Johan Edlund",
     "email": "me@johanedlund.se",
@@ -19,7 +22,8 @@
   "keywords": [
     "11ty",
     "eleventy",
-    "indieweb"
+    "indieweb",
+    "sDg"
   ],
   "bugs": {
     "url": "https://github.com/pjedlund/JED/issues"
