@@ -20,8 +20,8 @@ permalink: /
 	{# Micropub#}
 	<link rel="authorization_endpoint" href="https://indieauth.com/auth">
 	<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
-	<link rel="micropub" href="https://mikropub.netlify.app/micropub">
-	<link rel="micropub_media" href="https://mikropub.netlify.app/media">
+	<link rel="micropub" href=" ">
+	<link rel="micropub_media" href="https://mikropub.johanedlund.se/media">
 	{# Open Graph #}
 	<meta property="og:site_name" content="{{ meta.title }}">
 	<meta property="og:title" content="{{ title or meta.title }}">
@@ -56,7 +56,7 @@ and I live in the town of <span class="p-locality" lang="sv">Malmö</span> in th
 <li><a class="u-email" rel="me" href="mailto:me@johanedlund.se" title="E-mail">{% icon "email" %}<span hidden>E-mail<span></a></li>
 <li><a rel="me" class="u-url" href="{{ meta.social.mastodon.url }}" title="Mastodon">{% icon "mastodon" %}<span hidden>Mastodon<span></a></li>
 <li><a rel="me" class="u-url" href="{{ meta.social.twitter.url }}" title="Twitter">{% icon "twitter" %}<span hidden>Twitter<span></a></li>
-<li><a rel="me" class="u-url" href="{{ meta.social.github.url }}" title="Github">{% icon "github" %}<span hidden>Github</span></a></li>
+<li><a rel="me authn" class="u-url" href="{{ meta.social.github.url }}" title="Github">{% icon "github" %}<span hidden>Github</span></a></li>
 <li><a rel="me" class="u-url" href="{{ meta.social.flickr.url }}" title="Flickr">{% icon "flickr" %}<span hidden>Flickr</span></a></li>
 <li><a rel="me" class="u-url" href="{{ meta.social.dribbble.url }}" title="Dribbble">{% icon "dribbble" %}<span hidden>Dribbble</span></a></li>
 </ul>
